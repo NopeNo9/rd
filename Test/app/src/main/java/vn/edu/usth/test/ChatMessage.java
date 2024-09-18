@@ -1,11 +1,11 @@
 package vn.edu.usth.test;
 
-public class Message {
+public class ChatMessage {
 
     private String text;
     private boolean isSentByUser;
 
-    public Message(String text, boolean isSentByUser) {
+    public ChatMessage() {
         this.text = text;
         this.isSentByUser = isSentByUser;
     }

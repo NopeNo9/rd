@@ -1,5 +1,6 @@
 package vn.edu.usth.test;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
@@ -23,8 +24,9 @@ public class ChatActivity extends AppCompatActivity {
     private EditText editTextMessage;
     private Button buttonSend;
     private MessageAdapter messageAdapter;
-    private List<Message> messageList;
+    private List<ChatMessage> messageList;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void sendMessage(String messageText) {
-        Message message = new Message();
+        ChatMessage message = new ChatMessage();
         messageList.add(message);
         messageAdapter.notifyItemInserted(messageList.size() - 1);
         recyclerViewMessages.scrollToPosition(messageList.size() - 1);

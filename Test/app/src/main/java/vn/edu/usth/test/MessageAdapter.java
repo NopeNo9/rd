@@ -14,9 +14,9 @@ import java.util.List;
 // MessageAdapter.java
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
 
-    private List<Message> messageList;
+    private List<ChatMessage> messageList;
 
-    public MessageAdapter(List<Message> messageList) {
+    public MessageAdapter(List<ChatMessage> messageList) {
         this.messageList = messageList;
     }
 
@@ -29,7 +29,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
-        Message message = messageList.get(position);
+        ChatMessage message = messageList.get(position);
         holder.bind(message);
     }
 
@@ -47,7 +47,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             textViewMessage = itemView.findViewById(R.id.textViewMessage);
         }
 
-        public void bind(Message message) {
+        public void bind(ChatMessage message) {
             textViewMessage.setText(message.getText());
         }
     }
